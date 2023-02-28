@@ -12,7 +12,7 @@ list.append("Hello")
 print(list)
 list.pop(0)
 print(list)
-list[1]="World"
+list[1] = "World"
 print(list)
 list.remove("World")
 print(list)

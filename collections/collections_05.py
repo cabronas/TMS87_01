@@ -7,7 +7,9 @@
 Объеденить два множества без общих элементов.
 """
 set1 = {1, 2, 3}
+print(set1)
 set2 = {3, 4, 5}
+print(set2)
 set3 = set1 | set2
 print(set3)
 set3 = set1 & set2
