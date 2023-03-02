@@ -8,7 +8,7 @@ conf, pech = float(input()), float(input())
 aconf = conf * 0.3
 apech = pech * 0.4
 print(aconf, apech)
-b = ((2*pech)+(1.8*conf))*3
+b = ((2 * pech) + (1.8 * conf)) * 3
 print(b)
 """
 1000 = 25

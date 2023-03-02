@@ -7,7 +7,7 @@ m = (n * p * (1 + p)y) / (12 * ((1 + p)y – 1)), где p выражается 
 n = float(input())
 y = float(input())
 p = float(input())
-pe=p/100
-m = (n * pe * ((1 + pe)**y)) / (12 * (((1 + pe)**y) - 1))
+pe = p / 100
+m = (n * pe * ((1 + pe) ** y)) / (12 * (((1 + pe) ** y) - 1))
 s = (m * 12) * y
 print(f'm={m} s={s}')

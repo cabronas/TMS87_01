@@ -4,4 +4,3 @@
 side = float(input())
 print("V=", pow(side, 3))
 print("S=", str(6 * pow(side, 2)))
-

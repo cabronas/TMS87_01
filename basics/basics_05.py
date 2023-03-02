@@ -2,5 +2,5 @@
 Ввести с клавиатуры имя пользователя.
 Вывести на экран “Hello, [name]!”
 """
-username=input()
+username = input()
 print("Hello", username)
