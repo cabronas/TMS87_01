@@ -79,7 +79,7 @@ def seventh(array):
         qlower = (temparray[qlowerpos] + temparray[qlowerpos - 1]) / 2
     else:
         qlower = temparray[qlowerpos - 1]
-    qupperpos = len(temparray) // 0.75
+    qupperpos = 3 * len(temparray) // 4
     if qupperpos % 2 != 0:
         qupper = (temparray[qupperpos] + temparray[qupperpos - 1]) / 2
     else:
