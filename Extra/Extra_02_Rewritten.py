@@ -63,31 +63,28 @@ def fifth(array):
 
 def sixth(array):
     temparray = copy.copy(array)
-    if len(array) % 2 == 0:
-        median = temparray[len(temparray) / 2]
+    temparray.sort()
+    if len(temparray) % 2 == 0:
+        median = (temparray[len(temparray) // 2] + temparray[len(temparray) // 2 - 1]) / 2
     else:
-        a = len(temparray) // 2
-        median = (temparray[a] + temparray[a + 1]) / 2
+        median = temparray[len(temparray) // 2]
     return median
 
 
 def seventh(array):
     temparray = copy.copy(array)
     temparray.sort()
-    # # upper
-    qupperpos = 0.75 * (len(temparray))
-    if qupperpos % 2 != 0:
-        qupperpos = math.floor(qupperpos)
-        qupper = (temparray[qupperpos] + (temparray[qupperpos + 1])) / 2
-    else:
-        qupper = temparray[qupperpos]
-    # lower
-    qlowerpos = 0.25 * (len(temparray))
+    qlowerpos = len(temparray) // 4
     if qlowerpos % 2 != 0:
-        qlowerpos = math.floor(qlowerpos)
-        qlower = (temparray[qlowerpos] + (temparray[qlowerpos])) / 2
+        qlower = (temparray[qlowerpos] + temparray[qlowerpos - 1]) / 2
     else:
-        qlower = temparray[qlowerpos]
+        qlower = temparray[qlowerpos - 1]
+    qupperpos = len(temparray) // 0.75
+    if qupperpos % 2 != 0:
+        qupper = (temparray[qupperpos] + temparray[qupperpos - 1]) / 2
+    else:
+        qupper = temparray[qupperpos - 1]
+
     return qupper, qlower
 
 
