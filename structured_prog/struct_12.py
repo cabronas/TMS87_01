@@ -9,21 +9,26 @@
 """
 f0 = 0
 f1 = 1
+febNumberArr = []
 # Fn = F n-1 + F n-2 (applies to all other integers)
-print(f1)
+febNumberArr.append(f1)
 for i in range(1, 15):
     febNumber = f0 + f1
     f0 = f1
     f1 = febNumber
-    print(febNumber)
+    febNumberArr.append(febNumber)
 print()
+print(*febNumberArr)
 
 i = 1
 f0 = 0
 f1 = 1
+febNumberArr = []
+febNumberArr.append(f1)
 while i != 15:
     febNumber = f0 + f1
     f0 = f1
     f1 = febNumber
     i += 1
-    print(febNumber)
+    febNumberArr.append(febNumber)
+print(*febNumberArr)

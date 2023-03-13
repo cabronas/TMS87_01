@@ -7,16 +7,13 @@ s = input().split(" ")
 arr = []
 for i in range(len(s)):
     arr.append(int(s[i]))
-
-longestSegment = []
-segment = []
+segmentCount = 0
+segmentFlag = False
 for i in range(len(arr)):
     if arr[i - 1] < arr[i]:
-        segment.append(arr[i])
-        if len(segment) > len(longestSegment):
-            longestSegment = segment
+        if not segmentFlag:
+            segmentFlag = True
+            segmentCount += 1
     else:
-        if len(segment) > len(longestSegment):
-            longestSegment = segment
-        segment = [arr[i]]
-print(longestSegment)
+        segmentFlag = False
+print(segmentCount)
