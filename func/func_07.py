@@ -11,4 +11,9 @@ def evenKey(**dict):
             print(key, value)
 
 
-evenKey(a=1, ab=2, abc=3, abcd=4)
+def main():
+    evenKey(a=1, ab=2, abc=3, abcd=4)
+
+
+if __name__ == "__main__":
+    main()

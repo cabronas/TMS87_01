@@ -10,4 +10,9 @@ def summMax(*numbers):
 
 
 summ, maxNumber = summMax(4, 3, 2, 1)
-print(summ, maxNumber)
+
+def main():
+    print(summ, maxNumber)
+
+if __name__ == "__main__":
+    main()

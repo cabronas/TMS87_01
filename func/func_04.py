@@ -16,6 +16,9 @@ def fillArr(n, random_from=1, random_to=9):
         resultArr.append(column)
     return resultArr
 
+def main():
+    dimensions = input("n=")
+    print(fillArr(3))
 
-dimensions = input("n=")
-print(fillArr(3))
+if __name__ == "__main__":
+    main()

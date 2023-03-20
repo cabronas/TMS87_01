@@ -10,5 +10,11 @@ def hello(s):
 
 names = ["a", "b", "c", "d", "e"]
 
-for name in names:
-    hello(name)
+
+def main():
+    for name in names:
+        hello(name)
+
+
+if __name__ == "__main__":
+    main()

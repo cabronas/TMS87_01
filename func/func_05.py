@@ -11,4 +11,9 @@ def summArr(*numbers):
     return summ
 
 
-print(summArr(4, 3, 2, 1))
+def main():
+    print(summArr(4, 3, 2, 1))
+
+
+if __name__ == "__main__":
+    main()

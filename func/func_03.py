@@ -11,5 +11,10 @@ def factorial(n):
     return fact
 
 
-numbers = int(input("N="))
-print(factorial(numbers))
+def main():
+    numbers = int(input("N="))
+    print(factorial(numbers))
+
+
+if __name__ == "__main__":
+    main()
