@@ -10,7 +10,6 @@ def factorial(n):
         fact *= i
     return fact
 
-
 def main():
     numbers = int(input("N="))
     print(factorial(numbers))

@@ -5,15 +5,15 @@
 
 
 def summArr(*numbers):
-    summ = 0
-    for index, number in enumerate(numbers):
-        summ += number * index
-    return summ
+        summ = 0
+        for index, number in enumerate(numbers):
+            summ += number * index
+        return summ
 
 
 def main():
-    print(summArr(4, 3, 2, 1))
+        print(summArr(4, 3, 2, 1))
 
 
 if __name__ == "__main__":
-    main()
+        main()
