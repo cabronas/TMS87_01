@@ -17,14 +17,15 @@ def decorator_remove_even(func):
     return wrapper
 
 
-@decorator_remove_even
 def reverseArr(arr: list):
     return arr[::-1]
 
 
 def main():
     a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    reverseArr(a)
+    b = decorator_remove_even(reverseArr)
+    b(a)
+    # reverseArr(a)
 
 
 if __name__ == "__main__":

@@ -13,7 +13,7 @@ def time_decorator(func):
         time_start = datetime.now()
         result = func(n)
         time_end = datetime.now()
-        print((time_end - time_start).microseconds / 1000)  # milliseconds
+        print((time_end - time_start).microseconds * 1000)  # milliseconds
         print(result)
         return result
 
@@ -25,12 +25,12 @@ def mul(n):
     result = 1
     for i in range(1, n + 1):
         result *= i
-        # time.sleep(1)
+        time.sleep(1)
     return result
 
 
 def main():
-    mul(5)
+    mul(10)
 
 
 if __name__ == "__main__":
