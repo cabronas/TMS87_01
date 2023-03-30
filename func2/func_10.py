@@ -8,10 +8,7 @@ from functools import reduce
 
 
 def main():
-    args = ("abc", "abcabc")
-    result = (
-        lambda *x:
-        {value*2: "5" for value in x})(*args)
+    result = (lambda **kwargs: {k * 2: v for k, v in kwargs.items()})(a=1, b=2)
     print(result)
 
 
