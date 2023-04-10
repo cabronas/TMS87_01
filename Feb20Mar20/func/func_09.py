@@ -20,6 +20,7 @@ def getOcc(array):
                 }
             )
     print(numberDict)
+    return numberDict
 
 
 def main():

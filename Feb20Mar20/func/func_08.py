@@ -16,6 +16,7 @@ def sredAr(*numbers: int):
 def sredGe(*numbers: int):
     sredG = 1
     for number in numbers:
+        if number < 0: return None
         sredG *= number
     return pow(sredG, 1 / len(numbers))
 
