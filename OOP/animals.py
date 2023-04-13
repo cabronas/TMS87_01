@@ -84,7 +84,7 @@ class Pet:
         pass
 
     def __eq__(self, other):
-        if self.age == other.age and self.height == other.age and self.weight == other.weight and self.__class__ == other.__class__:
+        if self.age == other.age and self.height == other.height and self.weight == other.weight and self.__class__ == other.__class__:
             return True
         else:
             return False
