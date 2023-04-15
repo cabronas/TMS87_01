@@ -9,6 +9,8 @@ n!! = 2·4·6·...·n, если n — четное.
 
 def fact2(n):
     result = 1
+    if n < 0:
+        return None
     if n % 2 == 0:
         i = 2
         while i <= n:

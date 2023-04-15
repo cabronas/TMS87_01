@@ -16,6 +16,7 @@ def is_power_n(n, k):
         power = power * k
         if power == n:
             return True
+    return False
 
 
 n1 = 3

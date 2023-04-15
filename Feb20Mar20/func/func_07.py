@@ -6,9 +6,12 @@
 
 
 def evenKey(**dict):
+    dreturn = {}
     for key, value in dict.items():
         if len(key) % 2 == 0:
             print(key, value)
+            dreturn[key] = value
+    return dreturn
 
 
 def main():
