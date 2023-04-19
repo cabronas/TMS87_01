@@ -20,6 +20,11 @@ def main():
     print(time1 == time3)
     print(time3 != time2)
 
+    time4 = MyTime(time2)
+    print(time4)
+    time4 = MyTime("1-2-3")
+    print(time4)
+
 
 if __name__ == "__main__":
     main()

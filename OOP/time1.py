@@ -1,9 +1,29 @@
 class MyTime:
 
-    def __init__(self, hours, minutes, seconds):
-        self.__hours = hours
-        self.__minutes = minutes
-        self.__seconds = seconds
+    # def __init__(self, hours, minutes, seconds):
+    #     self.__hours = hours
+    #     self.__minutes = minutes
+    #     self.__seconds = seconds
+    def __init__(self, *args):
+        if args[0].__class__ == MyTime:
+            self.__hours = args[0].hours
+            self.__minutes = args[0].minutes
+            self.__seconds = args[0].seconds
+        elif len(args) == 3:
+            self.__hours = int(args[0])
+            self.__minutes = int(args[1])
+            self.__seconds = int(args[2])
+        elif len(args) == 1:
+            possible_time = args[0].split("-")
+            if len(possible_time) == 3:
+                self.__hours = int(possible_time[0])
+                self.__minutes = int(possible_time[1])
+                self.__seconds = int(possible_time[2])
+        else:
+            self.__hours = 0
+            self.__minutes = 0
+            self.__seconds = 0
+
 
     @property
     def hours(self):
@@ -97,5 +117,3 @@ class MyTime:
 
     def __ne__(self, other):
         return not (self.hours == other.hours and self.minutes == other.minutes and self.seconds == other.seconds)
-
-

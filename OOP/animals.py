@@ -1,11 +1,9 @@
 """
-Добавить два новых атрибута в родительский класс: weight и height.
-Добавить методы change_weight, change_height принимающий один параметр
-и прибавляющий его к соответствующему аргументу.
-В случае если параметр не был передан, увеличивать на 0.2.
-Изменить метод fly класса Parrot.
-Если вес больше 0.1 выводить сообщение This parrot cannot fly.
+Создать статичный метод get_random_name для класса Pet.
+Метод возвращает случайную строку вида A-42.
 """
+import random
+import string
 
 
 class Pet:
@@ -15,6 +13,9 @@ class Pet:
         self.__master = master
         self.__weight = weight
         self.__height = height
+        Pet.__counter += 1
+
+    __counter = 0
 
     @property
     def name(self):
@@ -88,6 +89,16 @@ class Pet:
             return True
         else:
             return False
+
+    @classmethod
+    def get_counter(cls):
+        return cls.__counter
+
+    @staticmethod
+    def get_random_name():
+        letter = random.choice(string.ascii_uppercase)
+        number = random.randint(1,99)
+        return f"{letter}-{number}"
 
 
 class Dog(Pet):
