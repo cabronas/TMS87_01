@@ -19,16 +19,20 @@ def formula(n):
 
 
 def collatz(n):
-    max_collatz = [1, 0]
-    for i in range(1, n + 1):
-        length = 0
-        curent_value = i
-        while curent_value != 1:
-            length += 1
-            curent_value = formula(curent_value)
-        if max_collatz[1] < length:
-            max_collatz = [i, length]
-    return tuple(max_collatz)
+    result_dict = {1: 0}
+    for i in range(2, n):
+        step_count = 0
+        origin_count = i
+        while origin_count <= i:
+            if i % 2:
+                i = (i * 3 + 1) // 2
+                step_count += 2
+            else:
+                i //= 2
+                step_count += 1
+        result_dict[origin_count] = result_dict[i] + step_count
+    result = max(result_dict, key=result_dict.get)
+    return result, result_dict[result]
 
 
 def main():
