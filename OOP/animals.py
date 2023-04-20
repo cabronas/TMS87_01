@@ -1,12 +1,11 @@
 """
-Создать статичный метод get_random_name для класса Pet.
-Метод возвращает случайную строку вида A-42.
+Сделать класс Pet абстрактным
 """
 import random
 import string
+from abc import ABC, abstractmethod
 
-
-class Pet:
+class Pet(ABC):
     def __init__(self, name, age, master, weight, height):
         self.__name = name
         self.__age = age
@@ -81,8 +80,9 @@ class Pet:
         else:
             self.height += 0.2
 
+    @abstractmethod
     def voice(self):
-        pass
+        raise NotImplementedError
 
     def __eq__(self, other):
         if self.age == other.age and self.height == other.height and self.weight == other.weight and self.__class__ == other.__class__:

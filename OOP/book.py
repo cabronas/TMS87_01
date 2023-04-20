@@ -13,12 +13,19 @@
 import string
 
 
-class BookExceptions(Exception):
-    def __init__(self, message="Default"):
-        BookExceptions.text = message
+class BookTypeException(Exception):
+    def __init__(self, message="Incorrect input type"):
         super().__init__(message)
 
-    text = "Default"
+
+class PageCountException(Exception):
+    def __init__(self, message="Incorrect page count"):
+        super().__init__(message)
+
+
+class PriceException(Exception):
+    def __init__(self, message="Incorrect price"):
+        super().__init__(message)
 
 
 class Book:
@@ -28,12 +35,12 @@ class Book:
                 (year_of_release.__class__ == int) and
                 (author.__class__ == str) and
                 (price.__class__ == int or price.__class__ == float)):
-            raise BookExceptions(message="Wrong input type")
+            raise BookTypeException()
         else:
             if page_count <= 0:
-                raise BookExceptions(message="Incorrect page count")
+                raise PageCountException()
             elif price <= 0:
-                raise BookExceptions(message="Incorrect price")
+                raise PriceException()
         self.__name = name
         self.__page_count = page_count
         self.__year_of_release = year_of_release

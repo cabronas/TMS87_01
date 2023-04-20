@@ -12,7 +12,7 @@
 """
 
 from book import Book
-from book import BookExceptions
+from book import BookTypeException, PageCountException, PriceException
 
 
 def main():
@@ -20,28 +20,27 @@ def main():
     page_count = 200
     year = 1865
     author = "Фёдор Достоевский"
-    price = "2000"
+    price = -2000
     correct = None
     try:
         print(name, page_count, year, author, price)
         correct = Book(name, page_count, year, author, price)
         print(correct.name)
-    except BookExceptions:
-        if BookExceptions.text == "Incorrect page count":
-            print(BookExceptions.text)
-            print("Reseting page count to 1")
-            page_count = 1
-            correct = Book(name, page_count, year, author, price)
-        elif BookExceptions.text == "Incorrect price":
-            print(BookExceptions.text)
-            print("Reseting price to 0")
-            price = 0
-            correct = Book(name, page_count, year, author, price)
-        elif BookExceptions.text == "Wrong input type":
-            print(BookExceptions.text)
-            print("No action will be taken")
+    except BookTypeException:
+        print("Incorrect input type")
+        print("No action will be taken")
+    except PageCountException:
+        print("Incorrect page count")
+        print("Reseting page count to 1")
+        page_count = 1
+        correct = Book(name, page_count, year, author, price)
+    except PriceException:
+        print("Incorrect price")
+        print("Reseting price to 1")
+        price = 1
+        correct = Book(name, page_count, year, author, price)
     finally:
-        if correct != None:
+        if correct is not None:
             print(correct.name, correct.page_count, correct.author, correct.price, correct.year_of_release)
 
 
