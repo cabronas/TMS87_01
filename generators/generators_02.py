@@ -13,7 +13,9 @@ import time
 def number_gen(a=1, b=10, diff=10):
     time.sleep(1)
     while True:  # ???
-        yield random.randint(a + diff, b + diff)
+        yield random.randint(a, b)
+        a += diff
+        b += diff
 
 
 def main():
